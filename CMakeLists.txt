@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project( os_vmm )
+ENABLE_LANGUAGE(ASM_MASM)
+message(STATUS ${CMAKE_CXX_FLAGS_DEBUG})
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /EHa")
+set( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} /SAFESEH:NO" )
+ADD_EXECUTABLE(os_vmm main.cpp clear.asm)
